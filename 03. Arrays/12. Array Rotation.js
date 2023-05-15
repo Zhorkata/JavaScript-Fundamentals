@@ -8,7 +8,7 @@ function rotation(arr, rotCount) {
 }
 rotation([51, 47, 32, 61, 21], 2);
 
-function arrayRotation(arr, rotationCount) {
+/*function arrayRotation(arr, rotationCount) {
   let buffArr = [];
   for (let i = 0; i < rotationCount; i++) {
     let currentElement = arr[0];
@@ -21,4 +21,5 @@ function arrayRotation(arr, rotationCount) {
   }
   console.log(arr.join(" "));
 }
-arrayRotation([51, 47, 32, 61, 21], 2);
+arrayRotation([51, 47, 32, 61, 21], 2); */
+//Second solution for this exercise
