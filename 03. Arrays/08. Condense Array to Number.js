@@ -1,17 +1,15 @@
 function condenseArrayToNumber(arr) {
-    let sum = 0;
-    let condenseArr = [];
-
-    for (let num = 0; num < arr.length - 1; num++) {
-        let firstNum = Number(arr[num]);//5 0 4 1
-        let secondNum = Number(arr[num + 1]);//0 4 1 2
-        condenseArr.push(firstNum + secondNum);
+    while(arr.length > 1){
+        let condensedArr = [];//create a new empty array
+        for (let i = 0; i < arr.length - 1; i++) {
+            let curNum = Number(arr[i]);//5
+            let nextNum = arr[i + 1];//5 4 5 3
+            let sum = curNum + nextNum;
+            condensedArr.push(sum);
+        }
+        arr = condensedArr;
     }
-    for (let pushed of condenseArr) {
-        sum += pushed;
-    }
-    console.log(sum);
-    console.table(condenseArr)
+    console.log(arr[0]);
 }
 condenseArrayToNumber([2, 10, 3]) //its ok!
 condenseArrayToNumber([5, 0, 4, 1, 2])
