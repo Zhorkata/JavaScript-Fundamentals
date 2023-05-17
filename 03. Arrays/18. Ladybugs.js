@@ -1,12 +1,9 @@
 function ladyBugs(input) {
     let field = [];
     let size = Number(input[0]);
-    
     for (let i = 0; i < size; i++) {
         field[i] = 0;
     }
-    
-
     let ladyBugsIndex = input[1].split(' ');
     
     for (let i = 0; i < ladyBugsIndex.length; i++) {
@@ -15,7 +12,6 @@ function ladyBugs(input) {
             field[index] = 1;
         }
     }
-
     for (let i = 2; i < input.length; i++) {
         let commands = input[i].split(' ');
         let ladyBugIndex = Number(commands[0]);
