@@ -6,14 +6,14 @@ function dungeonestDark(arr) {
     let coins = 0;
     for (let room of rooms) {
         let commands = room.split(' ');
-        let command = commands[0];//rat bat potion rat chest boss chest
-        let value = Number(commands[1]);//10 20 10 10 100 70 1000
+        let command = commands[0];
+        let value = Number(commands[1]);
         switch (command) {
             case 'potion':
                 if (health + value > 100) {
                     value = value - (value + health - 100);//10
                 }
-                health += value;
+                health += value;//increase health
                 console.log(`You healed for ${value} hp.`);//
                 console.log(`Current health: ${health} hp.`);//100
                 break;
@@ -22,13 +22,13 @@ function dungeonestDark(arr) {
                 console.log(`You found ${value} coins.`);
                 break;
             default:
-                health -= value;
+                health -= value;//decrease health
                 if (health > 0) {
                     console.log(`You slayed ${command}.`);
                 } else {
                     console.log(`You died! Killed by ${command}.`);
                     gameOver = true;
-                    console.log(`Best room: ${roomCounter}`);
+                    console.log(`Best room: ${roomCounter}`);//We lost :( Next time...
                 }
                 break;
         }
@@ -38,7 +38,7 @@ function dungeonestDark(arr) {
         }
     }
     if (!gameOver) {
-        console.log("You've made it!");
+        console.log("You've made it!");//We won! Congats!
         console.log(`Coins: ${coins}`);
         console.log(`Health: ${health}`);
     }
