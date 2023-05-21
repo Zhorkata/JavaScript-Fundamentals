@@ -15,8 +15,6 @@ simpleCalculator(40, 8, 'divide')
 simpleCalculator(12, 19, 'add')
 simpleCalculator(50, 13, 'subtract')
 
-
-
 //USING IN OPERATOR
 
 // function simpleCalculator(firstNum, secondNum, operation) {
@@ -40,7 +38,6 @@ simpleCalculator(50, 13, 'subtract')
 // console.log(simpleCalculator(40, 8, 'divide'));   // Output: 5
 // console.log(simpleCalculator(12, 19, 'add'));     // Output: 31
 // console.log(simpleCalculator(50, 13, 'subtract'));// Output: 37
-
 
 
 // function simpleCalculator(firstNum, secondNum, operation) {
