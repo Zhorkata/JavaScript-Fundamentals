@@ -7,7 +7,6 @@ function repeatString(text, countRepeat) {
     // console.log(string);
     return string;
 }
-
 repeatString("abc", 3)
 console.log('-----');
 repeatString("String", 2)
