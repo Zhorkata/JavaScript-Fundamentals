@@ -1,6 +1,5 @@
 function repeatString(text, countRepeat) {
     let string = '';
-
     for (let i = 0; i < countRepeat; i++) {
         string += text;
     }
