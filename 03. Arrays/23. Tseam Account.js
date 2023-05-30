@@ -1,47 +1,49 @@
-function account(arr){
-    let commands = arr;//copy array
-    let finalAcc = [];
-    for(let i = 1; i < arr.length; i++){
-        // console.log(commands[i]);// 6 rows with commands
-        let command = commands[i].split(' ');
-        // console.log(command);//several arrays - 6
-        let curCommand = command[0];// Install Uninstall Update Expansion Play!
-        let curGame = command[1];//Lol Wow Diablo Cs-Go undefined
-        let account = commands[0];//CS WoW Diablo
+function tseamAccount(array) {
+    let account = array[0].split(' ');
+    let arrayL = array.length - 1;
+    
+    for (let i = 1; i < arrayL; i++) {
+        let command = array[i].split(' ');
 
-        switch(curCommand){
+        if (command[0] === 'Play!') {
+            break;
+        }
+        switch (command[0]) {
             case 'Install':
-                finalAcc.push(account + ' ' + curGame);// CS WoW Diablo LoL
-                console.log(finalAcc);
+                if (account.includes(command[1])) {
+                    break;
+                } else {
+                    account.push(command[1]);
+                }
                 break;
             case 'Uninstall':
-                // if(account.includes(curGame)){
-                //     finalAcc += " ";
-                // }
-                let index = finalAcc.indexOf('WoW');
-                if(index > -1){
-                    finalAcc.splice(index, 1);
+                if (account.includes(command[1])) {
+                    let index = account.indexOf(command[1]);
+                    account.splice(index, 1)
                 }
-
-                console.log(finalAcc.slice());
-
-
-                //to do
                 break;
             case 'Update':
-                //to do 
+                if (account.includes(command[1])) {
+                    let index = account.indexOf(command[1]);
+                    let temp = account[index];
+                    account.splice(index, 1);
+                    account.push(temp);
+                }
                 break;
             case 'Expansion':
-                //to do
-                break;
+                let gameOfExpansion = command[1].split("-");
+                if (account.includes(gameOfExpansion[0])) {
+                    let index = account.indexOf(gameOfExpansion[0]);
+                    let expansionGame = `${gameOfExpansion[0]}:${gameOfExpansion[1]}`
+                    account.splice(index + 1, 0, expansionGame);
+                }
         }
     }
-    // while(commands !== 'Play!'){
-    // }
+    console.log(account.join(" "))
 }
-account(['CS WoW Diablo',
-'Install LoL',
-'Uninstall WoW',
-'Update Diablo',
-'Expansion CS-Go',
-'Play!'])
+tseamAccount(['CS WoW Diablo',
+    'Install LoL',
+    'Uninstall WoW',
+    'Update Diablo',
+    'Expansion CS-Go',
+    'Play!'])
