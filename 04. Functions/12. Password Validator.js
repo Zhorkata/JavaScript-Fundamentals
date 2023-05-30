@@ -34,9 +34,9 @@ function passwordValidator(password) {
 
     }
 }
-passValidator('logIn'); //ok
+passValidator('logIn'); 
 console.log('-------');
-passValidator('MyPass123')//  OK
+passValidator('MyPass123');
 console.log('-------');
-passValidator('Pa$s$s')// OK
+passValidator('Pa$s$s');
 
