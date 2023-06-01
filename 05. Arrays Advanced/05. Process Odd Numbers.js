@@ -1,5 +1,6 @@
 function processOddNumbers(numbers) {
-let newArr = []
+let newArr = [];
+
     for (let i = 0; i < numbers.length; i++) {
         if(i % 2 !== 0){
             newArr.push(numbers[i] * 2)
