@@ -5,8 +5,7 @@ function distinctArray(array) {
         let temp = copyArray[i];
         if (!newArr.includes(temp)) {
             newArr.push(temp)
-
-            // console.log(copyArray[i]);
+            //console.log(copyArray[i]);
         }
     }
     console.log(newArr.join(' '));
