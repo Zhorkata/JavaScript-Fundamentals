@@ -2,6 +2,7 @@ function oddEven(num) {
    let numAsString = num + " ";
    let evenResult = 0;
    let oddResult = 0;
+
    for (let i = 0; i < numAsString.length; i++) {
       // console.log(numAsString[i]);
       //  result += Number(numAsString[i]);
