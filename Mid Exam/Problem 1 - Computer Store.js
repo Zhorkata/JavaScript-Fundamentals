@@ -3,7 +3,6 @@ function computerStore(numbers) {
     let numLen = numbers.length;
     // let command = numbers[numbers.length - 1];
 
-
     let priceWithoutTaxes = 0;
     let totalPrice = 0;
     let taxes = 0;
@@ -37,43 +36,39 @@ function computerStore(numbers) {
                 console.log('-----------');
                 console.log(`Total price: ${totalPrice.toFixed(2)}$`);
             }
-            // break;
+            break;
         }
 
         priceWithoutTaxes += currentPrice;//1023...1544.96
         taxes += currentPrice * 0.2;//204.6...308.992
         totalPrice = priceWithoutTaxes + taxes;//1227.6...1853.95
-        
     }
-    // if(totalPrice === 0){
-    //         console.log('Invalid price!');
-    // }
-
 }
-// computerStore([
-//     '1050',
-//     '200',
-//     '450',
-//     '2',
-//     '18.50',
-//     '16.86',
-//     'special'
-// ])
-// computerStore([
-//     '1023', 
-//     '15', 
-//     '-20',
-//     '-5.50',
-//     '450', 
-//     '20', 
-//     '17.66', 
-//     '19.30', 
-//     'regular'
-//     ])
 computerStore([
+    '1050',
+    '200',
+    '450',
+    '2',
+    '18.50',
+    '16.86',
+    'special'
+])
+console.log('===============Another output=================');
+computerStore([
+    '1023', 
+    '15', 
+    '-20',
+    '-5.50',
+    '450', 
+    '20', 
+    '17.66', 
+    '19.30', 
     'regular'
     ])
-    
+console.log('==============Another output==================');
+computerStore([
+'regular'
+])
 
 
     
