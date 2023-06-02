@@ -1,7 +1,5 @@
 function computerStore(numbers) {
-    // let command = numbers.pop();//special
     let numLen = numbers.length;
-    // let command = numbers[numbers.length - 1];
 
     let priceWithoutTaxes = 0;
     let totalPrice = 0;
