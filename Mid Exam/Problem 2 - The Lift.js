@@ -1,6 +1,6 @@
 function theLift(arr) {
-    let people = Number(arr.shift());
-    let maxCapacity = 4;
+    let people = Number(arr.shift());//get current people count
+    let maxCapacity = 4;//create new variable with maximum lift capacity
   
     let arrNum = arr[0].split(' ').map(Number);
   
