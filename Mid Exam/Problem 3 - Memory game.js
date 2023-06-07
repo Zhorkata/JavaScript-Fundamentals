@@ -4,7 +4,6 @@ function memoryGame(input) {
     sequenceOfElements = sequenceOfElements.split(' ');//convert it from string to array
     let moves = 0;
 
-
     // let command = input;//'1 0'
 for (let command of input) {
     while (command !== 'end') {
@@ -30,13 +29,10 @@ for (let command of input) {
                     console.log(`Sorry you lose :( ${sequenceOfElements.join(' ')}`);
                     break;
                 }
-
             }
         }
     }
-    
 }
-    
 
 } memoryGame([
     "1 1 2 2 3 3 4 4 5 5",
