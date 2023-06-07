@@ -1,26 +1,42 @@
 function memoryGame(input) {
 
-    let sequenceOfElements = input.shift();
+    let sequenceOfElements = input.shift();//get first row from main array
+    sequenceOfElements = sequenceOfElements.split(' ');//convert it from string to array
+    let moves = 0;
 
-    for (let i = 0; i < input.length; i++) {
 
-        let command = input[i];//'1 0'
+    // let command = input;//'1 0'
+for (let command of input) {
+    while (command !== 'end') {
+        for (let i = 0; i < input.length; i++) {
 
-        while (command !== 'end') {
-            if(sequenceOfElements[i] === sequenceOfElements[i+2]){
-                let newArr = sequenceOfElements.split(' ').splice(0, 2)
+            if (sequenceOfElements[i] === sequenceOfElements[i + 1]) {
+                let matchedNum = sequenceOfElements[i];//get one of the mathed numbers
+                let newArr = sequenceOfElements.splice(0, 2);//["1" , "1"]// we use it only for modify our row
+                // command = command.split(' ');
+                // let currentIndex = command[i];
 
-                newArr = newArr.slice(0, 2);
+                //after that 'sequenceOfElements' === rest of the row
+                moves++;
+                let currentRow = command[i].split(' ');
+            }
+             else if (currentRow[i] < 0 || currentRow[i + 1] < 0) {
+                    console.log('Invalid input! Adding additional elements to the board');
+                }
+                console.log(`Congrats! You have found matching elements - ${matchedNum}!`);
+            
+
+                if (command === 'end') {
+                    console.log(`Sorry you lose :( ${sequenceOfElements.join(' ')}`);
+                    break;
+                }
 
             }
-
-        }
-        if (command === 'end') {
-            console.log("Sorry you lose :( { the current sequence's state}");
         }
     }
-
-
+    
+}
+    
 
 } memoryGame([
     "1 1 2 2 3 3 4 4 5 5",
@@ -48,3 +64,4 @@ memoryGame([
     "0 1",
     "end"
 ])
+
