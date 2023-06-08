@@ -18,7 +18,7 @@ function reception(array) {
             console.log(`Time needed: ${time}h.`);//10
 
             break;
-        }
+        }// MORE TO DO.... 30/100
     }
 }
 reception(['5', '6', '4', '20'])
