@@ -1,25 +1,18 @@
 function reception(array) {
 
-    let studentCount = Number(array[array.length - 1])//.pop also is fine
-    let studentsHelpedPerHour = 0;
+    let studentsHelpedPerHour = Number(array[0]) + Number(array[1]) + Number(array[2]);//10
+    let studentCount = Number(array[3]);//40
     let time = 0;
-    let studentsHelped = 0;
+    
+    while (studentCount > 0) {
+        studentCount -= studentsHelpedPerHour;
+        time++;
 
-    for (let i = 0; i < array.length - 1; i++) {
-        studentsHelpedPerHour += Number(array[i]);//15
-
-        if (i === 2) {
-            studentsHelped += studentsHelpedPerHour * 3;//18
-            time += 3;
-            i = 0;
-            studentsHelpedPerHour = 0;
+        if (time % 4 === 0) {
+            time++;
         }
-        if(studentsHelped >= studentCount){
-            console.log(`Time needed: ${time}h.`);//10
-
-            break;
-        }// MORE TO DO.... 30/100
     }
+    console.log(`Time needed: ${time}h.`);
 }
 reception(['5', '6', '4', '20'])
 reception(['1', '2', '3', '45'])
