@@ -1,57 +1,43 @@
 function memoryGame(input) {
-
-    let sequenceOfElements = input.shift();//get first row from main array
-    sequenceOfElements = sequenceOfElements.split(' ');//convert it from string to array
+    let sequence = input.shift().split(' ');//get first row of input and split each element in it
+    let index = 0;
+    let command = input[index++];//command will be every next row
     let moves = 0;
 
-    // let command = input;//'1 0'
-for (let command of input) {
-    while (command !== 'end') {
-        for (let i = 0; i < input.length; i++) {
+    while (command != 'end') {
+        let positions = command.split(' ').map(Number);//first: split the elements then: convert from string to integer
+        let positionOne = positions[0];//get first position
+        let positionTwo = positions[1];//get second position
 
-            if (sequenceOfElements[i] === sequenceOfElements[i + 1]) {
-                let matchedNum = sequenceOfElements[i];//get one of the mathed numbers
-                let newArr = sequenceOfElements.splice(0, 2);//["1" , "1"]// we use it only for modify our row
-                // command = command.split(' ');
-                // let currentIndex = command[i];
+        moves++;//increase moves
 
-                //after that 'sequenceOfElements' === rest of the row
-                moves++;
-                let currentRow = command[i].split(' ');
-            }
-             else if (currentRow[i] < 0 || currentRow[i + 1] < 0) {
-                    console.log('Invalid input! Adding additional elements to the board');
-                }
-                console.log(`Congrats! You have found matching elements - ${matchedNum}!`);
-            
-
-                if (command === 'end') {
-                    console.log(`Sorry you lose :( ${sequenceOfElements.join(' ')}`);
-                    break;
-                }
-            }
+        if (positionOne == positionTwo || (positionOne || positionTwo) > sequence.length - 1 || (positionOne || positionTwo) < 0) {
+            console.log('Invalid input! Adding additional elements to the board');
+            sequence.splice(sequence.length / 2, 0, `-${moves}a`, `-${moves}a`);
+            command = input[index++];
+            continue;//we will skip the rest of the code
         }
+
+        if (sequence[positionOne] != sequence[positionTwo]) {
+            console.log('Try again!');
+        } else {
+            console.log(`Congrats! You have found matching elements - ${sequence[positionOne]}!`);
+            sequence.splice(Math.max(positionOne, positionTwo), 1);
+            sequence.splice(Math.min(positionOne, positionTwo), 1);
+        }
+
+        if (sequence.length == 0) {
+            console.log(`You have won in ${moves} turns!`);
+            break;
+        }
+        command = input[index++];
+    }
+    if (sequence.length > 0) {
+        console.log(`Sorry you lose :(\n${sequence.join(' ')}`);
     }
 }
+console.log('-------------CASE 1--------------\n');
 
-} memoryGame([
-    "1 1 2 2 3 3 4 4 5 5",
-    "1 0",
-    "-1 0",
-    "1 0",
-    "1 0",
-    "1 0",
-    "end"
-])
-memoryGame([
-    "1 1 2 2 3 3 4 4 5 5",
-    "1 0",
-    "-1 0",
-    "1 0",
-    "1 0",
-    "1 0",
-    "end"
-])
 memoryGame([
     "a 2 4 a 2 4",
     "4 0",
@@ -60,4 +46,25 @@ memoryGame([
     "0 1",
     "end"
 ])
+console.log('\n-------------CASE 2--------------\n');
 
+memoryGame([
+    "1 1 2 2 3 3 4 4 5 5",
+    "1 0",
+    "-1 0",
+    "1 0",
+    "1 0",
+    "1 0",
+    "end"
+])
+console.log('\n-------------CASE 3--------------\n');
+
+memoryGame([
+    "1 1 2 2 3 3 4 4 5 5",
+    "1 0",
+    "-1 0",
+    "1 0",
+    "1 0",
+    "1 0",
+    "end"
+])
