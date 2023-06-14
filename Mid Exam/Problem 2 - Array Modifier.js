@@ -1,21 +1,30 @@
 function arrayModifier(array) {
-    let values = array.shift().split(' ');
+    let values = array.shift().split(' ').map(Number);
     let row = array[0].split(' ');//swap , 1 , 3...
-    let command = row[0];//swap...
-    console.log(values);
-    console.log(row);
-    console.log(command);
+    let command = row.shift();//swap...
+    // console.log(values);
+    // console.log(row);
+    // console.log(command);
     while (command !== 'end') {
+        let commandAsArray = (command).split(' ');
         switch (command) {
             case 'swap':
-
+                let x = Number(commandAsArray[1])
+                let y = Number(commandAsArray[2])
+                
                 break;
 
             case 'multiply':
                 //current index num multiply by the other
-
+                x = Number(commandAsArray[1])
+                y = Number(commandAsArray[2])
+                let multiply = values[x] * values[y]
+                values[x] = multiply;
                 break;
             case 'decrease':
+                for (let i = 0; i < values.length; i++) {
+                                    
+                }
                 //all nums - 1
 
                 break;
