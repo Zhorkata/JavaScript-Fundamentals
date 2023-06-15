@@ -1,36 +1,3 @@
-// function numbers(array) {
-
-//     array = split(' ').map(Number);
-//     let sum = 0;
-//     let numCount = 0;
-
-//     for (let num of array) {
-//         sum += num;
-//         numCount++;
-
-//     }
-
-//     let average = sum / array.length;
-
-//     let newArr = [];//top 5
-
-//     newArr.sort((a, b) => b - a);
-
-
-//     for (let i = 0; i < array.length; i++) {
-//         if (array[i] > average) {
-//             newArr.push(array[i]);
-
-//         }
-//     }
-//     if(numCount > 1){
-//         let result = newArr.join(' ');
-//         console.log(result.slice(0, 14));
-//     }else if(numCount <= 1){
-//         console.log('No');
-//     }
-    
-// }
 function numbers(array) {
     let myArray = array.shift().split(' ').map(Number);
 
