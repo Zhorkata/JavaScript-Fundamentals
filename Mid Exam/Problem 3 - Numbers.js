@@ -5,11 +5,8 @@ function numbers(array) {
     for (let num of array) {
         sum += num;
     }
-    // for (let i = 0; i < array.length; i++) {
-    //     sum += array[i];
-    // }
-
-    let average = sum / array.length;//28.076923076923077
+    
+    let average = sum / array.length;
     let newArr = [];//top 5
     
     for (let i = 0; i < array.length; i++) {
