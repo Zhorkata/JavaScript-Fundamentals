@@ -2,34 +2,27 @@ function arrayModifier(array) {
 
     let myArray = array.shift().split(' ').map(Number);
     let command = array.shift();//swap 1 3
-    // console.log(command);
+
     while (command !== 'end') {
 
         let commandAsArray = command.split(' ');
        
-        switch (command) {
-            case 'swap':
-
-                let x = Number(commandAsArray[1]);
-                let y = Number(commandAsArray[2]);
-                let temp = myArray[x];
-                myArray[x] = myArray[y];
-                myArray[y] = temp;
-                break;
-            case 'multiply':
-                //current index num multiply by the other
-                x = Number(commandAsArray[1]);
-                y = Number(commandAsArray[2]);
-                let multiply = myArray[x] * myArray[y];
-                myArray[x] = multiply;
-                break;
-            case 'decrease':
-                for (let i = 0; i < myArray.length; i++) {
-                    myArray[i] = myArray[i] - 1;
-                }
-                //all nums - 1
-                break;
+        if (commandAsArray[0] == 'swap') {
+            let a = Number(commandAsArray[1]);
+            let b = Number(commandAsArray[2]);
+            let temp = myArray[a];
+            myArray[a] = myArray[b];
+            myArray[b] = temp;
+        } else if (commandAsArray[0] == 'multiply') {
+            let a = Number(commandAsArray[1]);
+            let b = Number(commandAsArray[2]);
+            let multiply = myArray[a] * myArray[b];
+            myArray[a] = multiply;
+        } else if (commandAsArray[0] == 'decrease') {
+            for (let i = 0; i < myArray.length; i++) {
+                myArray[i] = myArray[i] - 1;
             }
+        }
             command = String(array.shift());
         }
         console.log(myArray.join(', '));
@@ -44,6 +37,7 @@ arrayModifier([
     'decrease',
     'end'
 ])
+console.log(`------ANITHER CASE------`);
 arrayModifier([
     '1 2 3 4',
     'swap 0 1',
