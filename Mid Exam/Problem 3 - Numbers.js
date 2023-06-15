@@ -1,29 +1,28 @@
 function numbers(array) {
-    let myArray = array.shift().split(' ').map(Number);
-
+    array = array.toString().split(' ').map(Number);
     let sum = 0;
-    let average = 0;
 
-    for (let num of myArray) {
+    for (let num of array) {
         sum += num;
     }
+    // for (let i = 0; i < array.length; i++) {
+    //     sum += array[i];
+    // }
 
-    average = sum / myArray.length;
-
-    let newArr = [];
-
-    for (let i = 0; i < myArray.length; i++) {
-        if (myArray[i] > average) {
-            newArr.push(myArray[i]);
+    let average = sum / array.length;//28.076923076923077
+    let newArr = [];//top 5
+    
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > average) {
+            newArr.push(array[i]);
         }
     }
-
-    newArr.sort((a, b) => b - a);
-
-    if (newArr.length <= 14) {
-        console.log(newArr.join(' '));
+    
+    if (newArr.length > 0) {
+        newArr.sort((a, b) => b - a);
+        console.log(newArr.slice(0,5).join(' '));
     } else {
-        console.log(newArr.slice(0, 14).join(' '));
+        console.log('No');
     }
 }
 numbers(['10 20 30 40 50']);
@@ -33,4 +32,5 @@ console.log(`------ANOTHER CASE------`);
 numbers(['1'])
 console.log(`------ANOTHER CASE------`);
 numbers(['-1 -2 -3 -4 -5 -6'])
+
 
