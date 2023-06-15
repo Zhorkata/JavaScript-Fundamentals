@@ -37,7 +37,7 @@ arrayModifier([
     'decrease',
     'end'
 ])
-console.log(`------ANITHER CASE------`);
+console.log(`------ANOTHER CASE------`);
 arrayModifier([
     '1 2 3 4',
     'swap 0 1',
