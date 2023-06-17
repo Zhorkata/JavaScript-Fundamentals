@@ -1,22 +1,22 @@
 function shotForTheWin(input) {
-    index = 0;
-    let sequence = input[index++]//.split(' ').map(Number);
+    let index = 0;
+    let sequence = input[index++].split(' ').map(Number);
     let command = input[index++];
-    while(command != 'end'){
-        let targetIndex = Number(command)
-
-        for (let i = 0; i < input.length; i++) {
-            let index0 = -1;
-            if (sequence[i] < sequence[i + 1]) {
-                let index1 = Number(sequence[i + 1]) - Number(sequence[i]);
+    while(command != 'End'){
+        
+        for (let i = 0; i < sequence.length; i++) {
+            let targetIndex = Number(command);// 0 4 3 1
+            if (sequence[targetIndex] <= sequence[i + 1]) {
+                sequence[i] = -1;
+                sequence[i+1] = sequence[i+1] - sequence[i];
+                
             }
-            sequence[i++]
+            command = input[index++]
     
-    
+    //TODO
         }
-    
     }
-
+// console.log(`Shot targets: ${count} -> ${target.join(' ')}`);
 }
 shotForTheWin
     (["24 50 36 70",
