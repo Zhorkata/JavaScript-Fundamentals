@@ -1,8 +1,9 @@
-function store(currentStock, currentStock) {
+function store(currentStock, orderedProducts) {
 
-    for (let i = 0; i < currentStock.length; i += 2) {
-        let currentProduct = currentStock[i];
-        let quantityOfCurrentProduct = Number(currentStock[i + 1]);
+    for (let i = 0; i < orderedProducts.length; i += 2) {
+
+        let currentProduct = orderedProducts[i];
+        let quantityOfCurrentProduct = Number(orderedProducts[i + 1]);
 
         if (currentStock.includes(currentProduct)) {
             let indexOfCurrProduct = currentStock.indexOf(currentProduct);
@@ -12,7 +13,9 @@ function store(currentStock, currentStock) {
             currentStock.push(quantityOfCurrentProduct);
         }
     }
+
     for (let i = 0; i < currentStock.length; i += 2) {
+
         let productType = currentStock[i];
         let productQuantity = Number(currentStock[i + 1]);
 
@@ -23,6 +26,7 @@ function store(currentStock, currentStock) {
         console.log(`${productAsObjects.productType} -> ${productAsObjects.productQuantity}`);
     }
 }
+
 store([
 'Chips', '5', 'CocaCola', '9', 'Bananas', '14', 'Pasta', '4', 'Beer', '2'
 ], [
