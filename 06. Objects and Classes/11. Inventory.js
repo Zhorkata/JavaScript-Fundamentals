@@ -1,5 +1,4 @@
 function inventory(array){
-
     let levelsAsArray = [];
     
     for (let i = 0; i < array.length; i++) {
@@ -10,7 +9,6 @@ function inventory(array){
      
         console.log(`Hero: ${heroName} \nlevel => ${heroLevel} \nitems => ${item}`);
     }
-    
 }
 inventory([
     'Isacc / 25 / Apple, GravityGun',
