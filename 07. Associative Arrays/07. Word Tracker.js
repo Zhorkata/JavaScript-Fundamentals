@@ -1,23 +1,21 @@
 function wordTracker(input) {
 
-    let myWords = input[0].split(' ');
-    let wordOccurrences = {};
+    const myWords = input.shift().split(' ');
+    const wordOccurrences = {};
 
-    for (let i = 1; i < input.length; i++) {
-
-        let words = input[i].split(' ');
-
-        for (let word of words) {
-            if (myWords.includes(word)) {
-                wordOccurrences[word] = wordOccurrences[word] ? wordOccurrences[word] + 1 : 1;
-            }
+    for (const word of myWords) {
+        wordOccurrences[word] = 0;
+    }
+    for (const word of input) {
+        if (wordOccurrences.hasOwnProperty(word)) {
+            wordOccurrences[word]++;
         }
     }
 
-    let sortedDescending = Object.entries(wordOccurrences).sort((a, b) => b[1] - a[1]);
+    const sortedDescending = Object.entries(wordOccurrences).sort((a, b) => b[1] - a[1]);
 
-    for (let [word, count] of sortedDescending) {
-        console.log(`${word} - ${count}`);
+    for (const kvp of sortedDescending) {
+        console.log(`${kvp[0]} - ${kvp[1]}`);
     }
 }
 wordTracker([
