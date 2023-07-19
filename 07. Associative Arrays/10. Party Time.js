@@ -1,23 +1,27 @@
 function partyTime(input) {
-    let obj = {};
-    let index = 0;
+    let vipList = [];
+    let regularList = [];
 
-    while(input[index] != 'PARTY'){
-        let firstChar = input[index][0];
-        if(!isNaN(firstChar)){
-            
-            //its number and its VIP
-            // console.log(firstChar);
-        }else{
-            //its NAN its regular
-            console.log(firstChar);
+    let currentGuest = input.shift();
+
+
+    while (currentGuest !== 'PARTY') {
+
+        let isVip = !isNaN(currentGuest[0]);
+
+        if (isVip) {
+            vipList.push(currentGuest)
+        } else {
+            regularList.push(currentGuest)
         }
-        
-        // console.log(input[index]);
-        index++;
+        currentGuest = input.shift();
     }
-    // for (let i = 0; i < input.length; i++) {
-    // }
+    let allGuests = vipList.concat(regularList);
+    for (const guest of input) {
+        allGuests.splice(allGuests.indexOf(guest), 1)
+    }
+    console.log(allGuests.length);
+    allGuests.forEach(guest => console.log(guest));
 }
 partyTime([
     '7IK9Yo0h',
@@ -29,4 +33,36 @@ partyTime([
     '9NoBUajQ',
     'Ce8vwPmE',
     'SVQXQCbc'
+])
+console.log(`---CASE--2--`);
+partyTime([
+    'm8rfQBvl',
+    'fc1oZCE0',
+    'UgffRkOn',
+    '7ugX7bm0',
+    '9CQBGUeJ',
+    '2FQZT3uC',
+    'dziNz78I',
+    'mdSGyQCJ',
+    'LjcVpmDL',
+    'fPXNHpm1',
+    'HTTbwRmM',
+    'B5yTkMQi',
+    '8N0FThqG',
+    'xys2FYzn',
+    'MDzcM9ZK',
+    'PARTY',
+    '2FQZT3uC',
+    'dziNz78I',
+    'mdSGyQCJ',
+    'LjcVpmDL',
+    'fPXNHpm1',
+    'HTTbwRmM',
+    'B5yTkMQi',
+    '8N0FThqG',
+    'm8rfQBvl',
+    'fc1oZCE0',
+    'UgffRkOn',
+    '7ugX7bm0',
+    '9CQBGUeJ'
 ])
