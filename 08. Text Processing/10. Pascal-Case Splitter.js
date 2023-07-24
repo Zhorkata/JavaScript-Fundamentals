@@ -6,9 +6,9 @@ function splitter(string) {
         if (lowerCased[i] === string[i]) {
             output = output + string[i]
         } else {
-            output = output + ' ' + string[i] 
+            output = output + ', ' + string[i] 
         }
     }
-    console.log(output.trimStart());
+    console.log(output.slice(2));
 }
 splitter('SplitMeIfYouCanHaHaYouCantOrYouCan')
