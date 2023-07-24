@@ -1,16 +1,14 @@
-function splitter(string){
+function splitter(string) {
 
     let lowerCased = string.toLowerCase();
     let output = '';
     for (let i = 0; i < string.length; i++) {
-        if(lowerCased[i] === string[i]){
-            //here we continue with writing
-        }else{
-            //we need to split
-            
+        if (lowerCased[i] === string[i]) {
+            output = output + string[i]
+        } else {
+            output = output + ' ' + string[i] 
         }
     }
-   console.log(output);
-
+    console.log(output.trimStart());
 }
 splitter('SplitMeIfYouCanHaHaYouCantOrYouCan')
