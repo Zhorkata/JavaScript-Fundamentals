@@ -1,3 +1,4 @@
+\\ !!! NOT FINISHED !!!
 function hashtag(text) {
     const placeholders = text.split(' ');
     for (let i = 0; i < placeholders.length; i++) {
