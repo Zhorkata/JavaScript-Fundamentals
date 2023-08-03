@@ -1,3 +1,4 @@
+//!!! NOT FINISHED !!!
 function charInRange(firstChar, secondChar) {
     let startChar = Math.min(firstChar.charCodeAt(0), secondChar.charCodeAt(0));//97
     let endChar = Math.max(firstChar.charCodeAt(0), secondChar.charCodeAt(0));//100
