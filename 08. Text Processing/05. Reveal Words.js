@@ -1,3 +1,4 @@
+// !!! NOT FINISHED !!!
 function revealWords(word, text) {
     let wordSplit = word.split(', ').join('')
 
