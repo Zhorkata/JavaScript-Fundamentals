@@ -9,4 +9,7 @@ Welcome to the "JavaScript Fundamentals" repository! This repository contains es
 4) Problem analysis and reduction to computer-executable steps
 5) Basic HTML and CSS skills
 
+### Here you can see the tasks I completed in the period May - July 2023.
+
 ## Certificate from Softuni for successfully passing the exam with grade 6.00 (A+): https://softuni.bg/certificates/details/180332/6b468e58
+
